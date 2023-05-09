@@ -126,7 +126,7 @@ const MenuBar = ({ menuClicked, menuClickedChange }) => {
             />
             <MenuButton
               text="티켓팅 안내사항"
-              moveTo={() => navigate("ticketing")}
+              moveTo={() => navigate("/ticketing")}
             />
             <MenuButton text="인하 필름" moveTo={BlockingToast} />
             <MenuButton
