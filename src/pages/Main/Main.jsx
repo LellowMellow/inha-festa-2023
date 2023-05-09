@@ -155,8 +155,11 @@ const Main = () => {
         해당 웹페이지는 인하대학교 멋쟁이사자처럼 11기에서 제작하였습니다.
       </Typography>
       <Margin height="24" />
+      <a href="https://www.instagram.com/likelion_inha/" target="_blank">
+        <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Finha-festa-2023.pages.dev&count_bg=%23000000&title_bg=%23000000&icon=react.svg&icon_color=%23FFFFFF&title=hits&edge_flat=true" />
+      </a>
 
-      <Margin height="122" />
+      <Margin height="244" />
     </Layout>
   );
 };

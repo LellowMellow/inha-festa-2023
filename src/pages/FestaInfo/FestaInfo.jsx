@@ -59,18 +59,6 @@ const FestaInfo = () => {
       />
       <Margin height="122" />
 
-      <Separator />
-      <Typography header>사전 티켓팅 안내</Typography>
-      <Margin height="122" />
-      <Typography header color="gray">
-        2023.05.10 - 2023.05.12
-      </Typography>
-      <Margin height="8" />
-      <Typography header color="gray">
-        COMING SOON
-      </Typography>
-      <Margin height="122" />
-
       <TextBox
         notmove
         title="주의사항"
