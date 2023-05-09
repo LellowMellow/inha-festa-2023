@@ -5,6 +5,7 @@ import { RiAddFill } from "react-icons/ri";
 import Flex from "../Flex/Flex";
 import Typography from "../Typography/Typography";
 import MenuButton from "./MenuButton";
+import Toast from "../Toast/Toast";
 
 const Dimmer = styled(motion.div)`
   width: 100%;
@@ -79,6 +80,10 @@ const StyledFlex = styled(Flex)`
 const MenuBar = ({ menuClicked, menuClickedChange }) => {
   const navigate = useNavigate();
 
+  const BlockingToast = () => {
+    Toast("COMING SOON");
+  };
+
   return (
     <>
       <AnimatePresence>
@@ -120,15 +125,14 @@ const MenuBar = ({ menuClicked, menuClickedChange }) => {
               moveTo={() => navigate("/booth-info")}
             />
             <MenuButton
+              text="티켓팅 안내사항"
+              moveTo={() => navigate("ticketing")}
+            />
+            <MenuButton text="인하 필름" moveTo={BlockingToast} />
+            <MenuButton
               text="인하대학교 총학생회 인스타그램"
               moveTo={() =>
                 window.open("https://www.instagram.com/inhastudent/")
-              }
-            />
-            <MenuButton
-              text="2023 비룡제 티저 영상"
-              moveTo={() =>
-                window.open("https://www.youtube.com/watch?v=7nmpWTmQqDc")
               }
             />
             <MenuButton

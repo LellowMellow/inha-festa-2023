@@ -115,6 +115,14 @@ const Main = () => {
       <Margin height="16" />
       <QuickLinkWrapper>
         <QuickLink
+          text="티켓팅 안내 확인하기"
+          moveTo={() => navigate("/ticketing")}
+        />
+        <QuickLink text="인하 필름" moveTo={BlockingToast} />
+      </QuickLinkWrapper>
+      <Margin height="16" />
+      <QuickLinkWrapper>
+        <QuickLink
           text="인하대학교 총학생회 인스타그램"
           moveTo={() => window.open("https://www.instagram.com/inhastudent/")}
         />

@@ -49,7 +49,7 @@ const TextBox = ({ title, detail, notmove, notitle }) => {
 
   return notmove ? (
     <StyledBox style={{ maxHeight: "none" }}>
-      <Flex column align="baseline">
+      <Flex column align="baseline" style={{ gap: "12px" }}>
         {!notitle && (
           <>
             <Flex>
@@ -57,7 +57,7 @@ const TextBox = ({ title, detail, notmove, notitle }) => {
               <Margin width="8" />
               <Typography boxtitle>{title}</Typography>
             </Flex>
-            <Margin height="8" />
+            <Margin height="1" />
           </>
         )}
         {detail &&
@@ -66,7 +66,7 @@ const TextBox = ({ title, detail, notmove, notitle }) => {
               boxtext
               color="gray"
               key={idx}
-              style={{ marginTop: "12px", lineHeight: "1.2" }}
+              style={{ lineHeight: "1.2", wordBreak: "break-all" }}
             >
               {v}
             </Typography>
@@ -79,7 +79,7 @@ const TextBox = ({ title, detail, notmove, notitle }) => {
       onClick={() => setIsClicked(!isClicked)}
       style={{ cursor: "pointer" }}
     >
-      <Flex column align="baseline">
+      <Flex column align="baseline" style={{ gap: "12px" }}>
         <Flex justify="space-between" style={{ width: "100%" }}>
           <Flex>
             <FaStarOfLife size="10px" color={theme.colors.white} />
@@ -88,14 +88,14 @@ const TextBox = ({ title, detail, notmove, notitle }) => {
           </Flex>
           <StyledArrow $isclicked={isClicked} />
         </Flex>
-        <Margin height="8" />
+        <Margin height="1" />
         {detail &&
           detail.map((v, idx) => (
             <Typography
               boxtext
               color="gray"
               key={idx}
-              style={{ marginTop: "12px" }}
+              style={{ lineHeight: "1.2", wordBreak: "break-all" }}
             >
               {v}
             </Typography>

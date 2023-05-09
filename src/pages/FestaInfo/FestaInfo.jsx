@@ -24,6 +24,11 @@ const FestaInfo = () => {
         text="부스, 푸드트럭 확인하기"
         moveTo={() => navigate("/booth-info")}
       />
+      <Margin height="16" />
+      <QuickLink
+        text="티켓팅 안내 확인하기"
+        moveTo={() => navigate("/ticketing")}
+      />
       <Margin height="122" />
 
       <Separator />
@@ -80,7 +85,7 @@ const FestaInfo = () => {
         text="인하대학교 총학생회 인스타그램"
         moveTo={() => window.open("https://www.instagram.com/inhastudent/")}
       />
-      <Margin height="122" />
+      <Margin height="244" />
     </Layout>
   );
 };

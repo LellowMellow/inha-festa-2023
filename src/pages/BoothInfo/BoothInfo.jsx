@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import { useNavigate } from "react-router-dom";
 import Layout from "../../component/Layout/Layout";
 import Separator from "../../component/Separator/Separator";
 import Margin from "../../component/Margin/Margin";
@@ -7,6 +7,8 @@ import TextBox from "../../component/TextBox/TextBox";
 import QuickLink from "../../component/QuickLink/QuickLink";
 
 const BoothInfo = () => {
+  const navigate = useNavigate();
+
   return (
     <Layout>
       <Margin height="122" />
@@ -27,6 +29,16 @@ const BoothInfo = () => {
         COMING SOON
       </Typography>
       <Margin height="122" />
+      <QuickLink
+        text="축제 안내사항 확인하기"
+        moveTo={() => navigate("/festa-info")}
+      />
+      <Margin height="16" />
+      <QuickLink
+        text="티켓팅 안내 확인하기"
+        moveTo={() => navigate("/ticketing")}
+      />
+      <Margin height="122" />
 
       <TextBox
         notmove
@@ -42,7 +54,7 @@ const BoothInfo = () => {
         text="인하대학교 총학생회 인스타그램"
         moveTo={() => window.open("https://www.instagram.com/inhastudent/")}
       />
-      <Margin height="122" />
+      <Margin height="244" />
     </Layout>
   );
 };
