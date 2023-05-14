@@ -136,17 +136,7 @@ const Download = ({ imageSrc, frameNumber, componentRef }) => {
       </Card>
       <Margin height="24" />
 
-      <QuickLink
-        text="완성된 사진 다운받기"
-        moveTo={() =>
-          exportComponentAsJPEG(componentRef, {
-            fileName: "inhafilm",
-            html2CanvasOptions: {
-              scale: 1080 / componentRef.current.offsetWidth,
-            },
-          })
-        }
-      />
+      <QuickLink text="완성된 사진 다운받기" moveTo={downloadPhoto} />
       <Margin height="16" />
       <QuickLink text="홈으로 돌아가기" moveTo={() => navigate("/")} />
       <Margin height="48" />
