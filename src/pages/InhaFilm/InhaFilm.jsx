@@ -24,6 +24,8 @@ const PhotoWrapper = styled(Flex)`
   align-items: center;
   transform-style: preserve-3d;
   position: relative;
+  padding: 0;
+  margin: 0;
 `;
 
 const FrameWrapper = styled.img`
@@ -37,18 +39,29 @@ const FrameWrapper = styled.img`
   z-index: 10;
   position: absolute;
   pointer-events: none;
+  padding: 0;
+  margin: 0;
 `;
 
 const ImageWrapper = styled.img`
-  width: 1080px;
   height: 1920px;
   overflow: hidden;
   box-sizing: border-box;
-  padding: 2px;
-  object-fit: cover;
-  object-position: center top;
   position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   pointer-events: none;
+
+  .vertical {
+    width: 100%;
+  }
+
+  .horizontal {
+    height: 100%;
+  }
+  padding: 0;
+  margin: 0;
 `;
 
 const InhaFilm = () => {

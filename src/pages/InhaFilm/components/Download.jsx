@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
-import { toPng, toJpeg } from "html-to-image";
+import { exportComponentAsJPEG } from "react-component-export-image";
 import styled, { css } from "styled-components";
 import Flex from "../../../component/Flex/Flex";
 import Margin from "../../../component/Margin/Margin";
@@ -97,20 +97,12 @@ const Download = ({ imageSrc, frameNumber, componentRef }) => {
   const downloadPhoto = () => {
     Toast("이미지로 변환중입니다.");
     Toast("10초 뒤 다운로드가 시작됩니다.");
-    toJpeg(document.getElementById("download-photo"), {
-      cacheBust: true,
-      width: 1080,
-      height: 1920,
-      canvasWidth: 1080,
-      canvasHeight: 1920,
-      skipAutoScale: true,
-      quality: 0.6,
-    }).then((image) => {
-      const link = window.document.createElement("a");
-      link.style = "display:none;";
-      link.download = "inhafilm.jpeg";
-      link.href = image;
-      link.click();
+
+    exportComponentAsJPEG(componentRef, {
+      fileName: "inhafilm",
+      html2CanvasOptions: {
+        scale: 1080 / componentRef.current.offsetWidth,
+      },
     });
   };
 
@@ -144,7 +136,17 @@ const Download = ({ imageSrc, frameNumber, componentRef }) => {
       </Card>
       <Margin height="24" />
 
-      <QuickLink text="완성된 사진 다운받기" moveTo={downloadPhoto} />
+      <QuickLink
+        text="완성된 사진 다운받기"
+        moveTo={() =>
+          exportComponentAsJPEG(componentRef, {
+            fileName: "inhafilm",
+            html2CanvasOptions: {
+              scale: 1080 / componentRef.current.offsetWidth,
+            },
+          })
+        }
+      />
       <Margin height="16" />
       <QuickLink text="홈으로 돌아가기" moveTo={() => navigate("/")} />
       <Margin height="48" />
