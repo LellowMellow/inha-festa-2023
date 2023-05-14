@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import styled from "styled-components";
 import { RiArrowRightLine, RiArrowLeftLine } from "react-icons/ri";
 import { motion } from "framer-motion";
@@ -10,6 +11,7 @@ import Typography from "../../../component/Typography/Typography";
 import Frame1 from "../Images/Frame1.png";
 import Frame2 from "../Images/Frame2.png";
 import Frame3 from "../Images/Frame3.png";
+import Toast from "../../../component/Toast/Toast";
 
 const PageWrapper = styled(motion.div)`
   display: flex;
@@ -62,6 +64,10 @@ const SelectFrame = ({
   frameNumber,
   setFrameNumber,
 }) => {
+  useEffect(() => {
+    Toast("프레임 로딩중입니다.");
+  }, []);
+
   return (
     <PageWrapper
       initial={{ opacity: 0 }}

@@ -18,10 +18,8 @@ const PageWrapper = styled(motion.div)`
 `;
 
 const AutoHeight = styled.img`
-  width: 100%;
   height: 200px;
   flex-grow: 1;
-  aspect-ratio: 1 / 1;
   object-fit: cover;
 `;
 

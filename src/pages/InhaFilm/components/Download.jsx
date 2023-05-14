@@ -12,6 +12,7 @@ import Frame1 from "../Images/Frame1.png";
 import Frame2 from "../Images/Frame2.png";
 import Frame3 from "../Images/Frame3.png";
 import BackFrame from "../Images/BackFrame.png";
+import Toast from "../../../component/Toast/Toast";
 
 const PageWrapper = styled(motion.div)`
   display: flex;
@@ -93,6 +94,26 @@ const Download = ({ imageSrc, frameNumber, componentRef }) => {
   const navigate = useNavigate();
   const [cardClicked, setCardClicked] = useState(false);
 
+  const downloadPhoto = () => {
+    Toast("이미지로 변환중입니다.");
+    Toast("10초 뒤 다운로드가 시작됩니다.");
+    toJpeg(document.getElementById("download-photo"), {
+      cacheBust: true,
+      width: 1080,
+      height: 1920,
+      canvasWidth: 1080,
+      canvasHeight: 1920,
+      skipAutoScale: true,
+      quality: 0.6,
+    }).then((image) => {
+      const link = window.document.createElement("a");
+      link.style = "display:none;";
+      link.download = "inhafilm.jpeg";
+      link.href = image;
+      link.click();
+    });
+  };
+
   return (
     <PageWrapper
       initial={{ opacity: 0 }}
@@ -123,26 +144,7 @@ const Download = ({ imageSrc, frameNumber, componentRef }) => {
       </Card>
       <Margin height="24" />
 
-      <QuickLink
-        text="완성된 사진 다운받기"
-        moveTo={() =>
-          toJpeg(document.getElementById("download-photo"), {
-            cacheBust: true,
-            width: 1080,
-            height: 1920,
-            canvasWidth: 1080,
-            canvasHeight: 1920,
-            skipAutoScale: true,
-            quality: 0.6,
-          }).then((image) => {
-            const link = window.document.createElement("a");
-            link.style = "display:none;";
-            link.download = "inhafilm.jpeg";
-            link.href = image;
-            link.click();
-          })
-        }
-      />
+      <QuickLink text="완성된 사진 다운받기" moveTo={downloadPhoto} />
       <Margin height="16" />
       <QuickLink text="홈으로 돌아가기" moveTo={() => navigate("/")} />
       <Margin height="48" />
