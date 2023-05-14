@@ -5,6 +5,7 @@ import Margin from "../../component/Margin/Margin";
 import Typography from "../../component/Typography/Typography";
 import TextBox from "../../component/TextBox/TextBox";
 import QuickLink from "../../component/QuickLink/QuickLink";
+import Toast from "../../component/Toast/Toast";
 
 const Ticketing = () => {
   const navigate = useNavigate();
@@ -33,6 +34,35 @@ const Ticketing = () => {
       <QuickLink
         text="부스, 푸드트럭 확인하기"
         moveTo={() => navigate("/booth-info")}
+      />
+      <Margin height="122" />
+
+      <Separator />
+      <Typography header>당일 티켓팅 안내</Typography>
+      <Margin height="8" />
+      <TextBox
+        notmove
+        notitle
+        detail={[
+          "사전 티켓팅에 성공하지 못하셨거나 시간이 맞지 않아 도전하지 못하신 분들을 대상으로 합니다.",
+          "사전 티켓팅을 하지 않으신 분들도 당일 티켓팅을 통해 재학생존에 입장하실 수 있습니다.",
+          "당일 티켓팅은 일자별 1,500명을 대상으로 하며 선착순이 아니 온라인 추첨식으로 진행됩니다.",
+        ]}
+      />
+      <TextBox
+        notmove
+        title="온라인 티켓팅 일정"
+        detail={[
+          "5.15 월요일 12:00 - 5.16 화요일 12:00",
+          "24시간동안의 신청을 바탕으로 추첨을 진행합니다.",
+          "DAY 1부터 DAY 3까지 축제 일자 전체에 대한 티켓팅이 진행됩니다.",
+          "선착순이 아닌 추첨제를 통해 진행되며, 상단 24시간 사이에 하단 링크를 통해 신청하시기 바랍니다.",
+        ]}
+      />
+      <Margin height="16" />
+      <QuickLink
+        text="온라인 티켓팅 신청하기"
+        moveTo={() => Toast("5월 15일 12시 링크 공개 예정")}
       />
       <Margin height="122" />
 
@@ -88,20 +118,6 @@ const Ticketing = () => {
           "모든 사전 티켓팅 신청자는 해당 신청 일자의 당일 티켓팅 참여가 불가능합니다.",
           "재학생존은 인하대학교 정규등록생·부분등록생·휴학생 등 학부생을 대상으로 합니다.",
           "대리 수령은 절대 금지하며, 적발 시 재학생존 영구 입장 불가 처리됩니다.",
-        ]}
-      />
-      <Margin height="122" />
-
-      <Separator />
-      <Typography header>당일 티켓팅 안내</Typography>
-      <Margin height="8" />
-      <TextBox
-        notmove
-        notitle
-        detail={[
-          "사전 티켓팅에 성공하지 못하셨거나 시간이 맞지 않아 도전하지 못하신 분들을 대상으로 합니다.",
-          "사전 티켓팅을 하지 않으신 분들도 당일 티켓팅을 통해 재학생존에 입장하실 수 있습니다.",
-          "당일 티켓팅은 일자별 1,500명을 대상으로 하며 축제 당일 선착순으로 진행합니다.",
         ]}
       />
       <Margin height="122" />
