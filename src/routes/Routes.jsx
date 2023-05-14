@@ -5,6 +5,7 @@ import { Fireworks } from "@fireworks-js/react";
 import { AnimatePresence } from "framer-motion";
 import BoothInfo from "../pages/BoothInfo/BoothInfo";
 import Ticketing from "../pages/Ticketing/Ticketing";
+import InhaFilm from "../pages/InhaFilm/InhaFilm";
 
 const Router = () => (
   <BrowserRouter>
@@ -67,6 +68,7 @@ const Router = () => (
         <Route path="/festa-info" element={<FestaInfo />} />
         <Route path="/booth-info" element={<BoothInfo />} />
         <Route path="/ticketing" element={<Ticketing />} />
+        <Route path="/inhafilm" element={<InhaFilm />} />
       </Routes>
     </AnimatePresence>
   </BrowserRouter>

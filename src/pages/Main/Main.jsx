@@ -18,6 +18,7 @@ const StyledTitle = styled.img`
   max-width: 600px;
   margin: 0 -24px;
   height: auto;
+  pointer-events: none;
 `;
 
 const StyledSubTitle = styled.img`
@@ -25,6 +26,7 @@ const StyledSubTitle = styled.img`
   max-width: 600px;
   margin: 0 -24px;
   height: auto;
+  pointer-events: none;
 `;
 
 const QuickLinkWrapper = styled(Flex)`
@@ -43,6 +45,7 @@ const LikeLionLogo = styled.img`
   min-width: 120px;
   max-width: 200px;
   margin-bottom: 16px;
+  pointer-events: none;
 `;
 
 const Main = () => {
@@ -118,7 +121,7 @@ const Main = () => {
           text="티켓팅 안내 확인하기"
           moveTo={() => navigate("/ticketing")}
         />
-        <QuickLink text="인하 필름" moveTo={BlockingToast} />
+        <QuickLink text="인하 필름" moveTo={() => navigate("/inhafilm")} />
       </QuickLinkWrapper>
       <Margin height="16" />
       <QuickLinkWrapper>

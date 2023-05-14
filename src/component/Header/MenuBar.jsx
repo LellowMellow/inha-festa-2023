@@ -128,7 +128,7 @@ const MenuBar = ({ menuClicked, menuClickedChange }) => {
               text="티켓팅 안내사항"
               moveTo={() => navigate("/ticketing")}
             />
-            <MenuButton text="인하 필름" moveTo={BlockingToast} />
+            <MenuButton text="인하 필름" moveTo={() => navigate("/inhafilm")} />
             <MenuButton
               text="인하대학교 총학생회 인스타그램"
               moveTo={() =>
