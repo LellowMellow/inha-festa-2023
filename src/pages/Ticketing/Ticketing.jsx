@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Layout from "../../component/Layout/Layout";
 import Separator from "../../component/Separator/Separator";
@@ -9,6 +10,32 @@ import Toast from "../../component/Toast/Toast";
 
 const Ticketing = () => {
   const navigate = useNavigate();
+  const deadline = "2023.05.16 12:00:00";
+
+  const [restHour, setRestHour] = useState(0);
+  const [restMinute, setRestMinute] = useState(0);
+  const [restSecond, setRestSecond] = useState(0);
+  const [isZero, setIsZero] = useState(false);
+
+  useEffect(() => {
+    const id = setInterval(() => {
+      const curTime = new Date();
+      const diff = new Date(deadline) - curTime;
+      if (diff >= 0) {
+        setRestHour(Math.floor((diff / (1000 * 60 * 60)) % 24));
+        setRestMinute(Math.floor((diff / (1000 * 60)) % 60));
+        setRestSecond(Math.floor((diff / 1000) % 60));
+      }
+    }, 1000);
+    // 1초마다 실행되는 인터벌을 이용해 1초마다 다시 랜더링 시켜줌
+    return () => clearInterval(id);
+    // 페이지를 벗어나게되면 반복을 종료해줌
+  }, [deadline]);
+
+  useEffect(() => {
+    if (restHour === 0 && restMinute === 0 && restSecond === 0) setIsZero(true);
+    else setIsZero(false);
+  }, [restHour, restMinute]);
 
   return (
     <Layout>
@@ -21,8 +48,9 @@ const Ticketing = () => {
         notitle
         detail={[
           "이번 비룡제에서는 축제 일자 별 3,000명 규모의 재학생존을 운영합니다.",
-          "티켓팅은 사전 티켓팅과 당일 티켓팅으로 나뉘어 진행됩니다.",
-          "사전 티켓팅에서 1500명, 당일 티켓팅에서 1500명씩 티켓팅을 진행합니다.",
+          "티켓팅은 사전 티켓팅과 온라인 티켓팅으로 나뉘어 진행됩니다.",
+          "사전 티켓팅에서 1500명, 온라인 티켓팅에서 1500명씩 티켓팅을 진행합니다.",
+          "사전 티켓팅에 참여하지 못한 예비군 현장 티켓팅 또한 진행될 예정입니다.",
         ]}
       />
       <Margin height="16" />
@@ -38,7 +66,7 @@ const Ticketing = () => {
       <Margin height="122" />
 
       <Separator />
-      <Typography header>당일 티켓팅 안내</Typography>
+      <Typography header>온라인 티켓팅 안내</Typography>
       <Margin height="8" />
       <TextBox
         notmove
@@ -56,18 +84,53 @@ const Ticketing = () => {
           "5.15 월요일 12:00 - 5.16 화요일 12:00",
           "24시간동안의 신청을 바탕으로 추첨을 진행합니다.",
           "DAY 1부터 DAY 3까지 축제 일자 전체에 대한 티켓팅이 진행됩니다.",
-          "선착순이 아닌 추첨제를 통해 진행되며, 상단 24시간 사이에 하단 링크를 통해 신청하시기 바랍니다.",
+          "선착순이 아닌 추첨제를 통해 진행되며, 해당 시간 사이에 하단 링크를 통해 신청하시기 바랍니다.",
         ]}
+      />
+      <TextBox
+        notmove
+        title="온라인 티켓팅 마감까지"
+        detail={[`${restHour}시간 ${restMinute}분 ${restSecond}초`]}
       />
       <Margin height="16" />
       <QuickLink
         text="온라인 티켓팅 신청하기"
-        moveTo={() => Toast("5월 15일 12시 링크 공개 예정")}
+        moveTo={() => window.open("https://www.inha.ac.kr/kr/4076/subview.do")}
       />
       <Margin height="122" />
 
       <Separator />
-      <Typography header>사전 티켓팅 안내</Typography>
+      <Typography header>예비군 현장 티켓팅 안내</Typography>
+      <Margin height="8" />
+      <TextBox
+        notmove
+        notitle
+        detail={[
+          "예비군 훈련으로 인해 사전 티켓팅에 참여하지 못한 분들을 대상으로 별도의 티켓팅이 진행됩니다.",
+          "사전 티켓팅 기간 (5.10 - 5.12) 내 예비군 대상이셨던 학생분들을 대상으로 합니다.",
+          "정확한 매수의 경우 추후 공지될 예정입니다.",
+        ]}
+      />
+      <TextBox
+        notmove
+        title="예비군 티켓팅 자격 요건 안내"
+        detail={[
+          "5.10 - 5.12 사전 티켓팅 당일 학생 예비군 대상 학과 소속 예비군 대상 학생이어야 합니다.",
+          "학생 예비군으로 참여하지 못한 해당 날짜 (5.10 : DAY 1 / 5.11 : DAY 2 / 5.12 : DAY 3) 의 공연 티켓에 해당됩니다.",
+          "해당 예비군 훈련 참여를 증빙할 수 있는 ‘예비군 교육 훈련 필증’을 반드시 인쇄하여 지참하여야 참여하실 수 있습니다.",
+        ]}
+      />
+      <Margin height="16" />
+      <QuickLink
+        text="예비군 교육 훈련 필증 확인하기"
+        moveTo={() =>
+          window.open("https://www.yebigun1.mil.kr/dmobis/index_main.do")
+        }
+      />
+      <Margin height="122" />
+
+      <Separator />
+      <Typography header>사전 티켓팅 안내 (종료)</Typography>
       <Margin height="8" />
       <TextBox
         notmove
