@@ -19,14 +19,14 @@ const BoothInfo = () => {
         notmove
         notitle
         detail={[
-          "부스 운영에 대한 전반적인 안내사항입니다.",
+          "아래는 부스 운영에 대한 전반적인 안내사항입니다.",
           "부스는 크게 A존, B존, 프로모션 존으로 운영됩니다.",
           "부스별로 이용 시간이 상이하니 이 점 유의하여 부스 체험을 진행해 주시길 바랍니다.",
         ]}
       />
       <TextBox
         notmove
-        title="부스 구역별 의무 운영 시간과 위치"
+        title="아래는 부스 구역별 의무 운영 시간과 위치"
         detail={[
           "A존 : 12:00 - 18:00",
           "B존 : 15:00 - 23:00",
@@ -60,6 +60,14 @@ const BoothInfo = () => {
       <Separator />
       <Typography header>A존 안내</Typography>
       <Margin height="8" />
+      <TextBox
+        notmove
+        title="A존 위치, 운영시간"
+        detail={[
+          "장소 : 2호관 앞, 60주년 기념관 앞",
+          "운영 시간 : 12:00 - 18:00",
+        ]}
+      />
       <TextBox
         notmove
         title="동아리 부스"
@@ -107,6 +115,11 @@ const BoothInfo = () => {
       <Margin height="8" />
       <TextBox
         notmove
+        title="B존 위치, 운영시간"
+        detail={["장소 : 정석학술정보관 뒤편", "운영 시간 : 15:00 - 23:00"]}
+      />
+      <TextBox
+        notmove
         title="B존 부스"
         detail={[
           "중앙관리본부",
@@ -124,7 +137,7 @@ const BoothInfo = () => {
       />
       <TextBox
         notmove
-        title="총학생회 본부 부스 및 의무실 운영 안내"
+        title="총학생회 본부 부스, 의무실 안내"
         detail={[
           "총학생회 본부와 의무실은 일반부스 B존에 위치합니다.",
           "총학생회 본부 부스에서는 비룡제 팜플렛 배부와 행사 관련 민원 접수 처리를 진행합니다.",
@@ -151,7 +164,9 @@ const BoothInfo = () => {
           "SKC : 5.17 - 5.19",
           "티젠 : 5.17 - 5.19",
           "",
+          "",
           "F&B 부스 운영 시간 : 11:00 - 24:00",
+          "",
           "",
           "안전을 위해 신분증 불시검문 진행 예정이니 신분증 지참 부탁드립니다.",
         ]}
@@ -160,6 +175,44 @@ const BoothInfo = () => {
       <QuickLink
         text="인하대학교 본관 위치 확인하기"
         moveTo={() => window.open("https://goo.gl/maps/4J5omUyrqxmGxgMu8")}
+      />
+      <Margin height="122" />
+
+      <Separator />
+      <Typography header>푸드트럭 안내</Typography>
+      <Margin height="8" />
+      <TextBox
+        notmove
+        notitle
+        detail={[
+          "장소 : 정석학술정보관 뒤편, 본관 뒤편",
+          "운영 시간 : 11:00 - 23:00",
+        ]}
+      />
+      <TextBox
+        notmove
+        title="푸드트럭 메뉴 목록"
+        detail={[
+          "미스터 팔봉이 묵 - 타코야끼, 멘보샤",
+          "더머거 - 닭꼬치",
+          "머거 - 닭꼬치",
+          "그레잇 - 감자튀김",
+          "춘향전 - 전",
+          "호떡맨(철판맨) - 야끼소바",
+          "스윗랜드 - 음료",
+          "지그재그 와플 - 와플",
+          "파라다이스 - 음료",
+          "천하제일관 - 닭강정",
+          "러브디아 - 불초밥",
+          "원츄츄러스 - 츄러스",
+          "츄앤츄 - 츄러스",
+          "남매끼리 - 스테이크리조또",
+          "널 부르는 트럭 - 곱창",
+          "떡볶이먹고가 - 분식",
+          "로꼬트럭 - 팟타이",
+          "핸드메이드 아이스크림 - 아이스크림",
+          "새우상사 - 새우튀김",
+        ]}
       />
       <Margin height="122" />
 

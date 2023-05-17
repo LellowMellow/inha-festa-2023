@@ -60,7 +60,7 @@ const Ticketing = () => {
       />
       <Margin height="16" />
       <QuickLink
-        text="부스 정보 확인하기"
+        text="부스, 푸드트럭 확인하기"
         moveTo={() => navigate("/booth-info")}
       />
       <Margin height="122" />

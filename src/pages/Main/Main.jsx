@@ -59,17 +59,21 @@ const Main = () => {
     {
       id: 0,
       date: "2023.05.17 WED",
-      detail: [" ", "COMING SOON", " "],
+      detail: [
+        "카더가든 - Car, the garden",
+        "헤이즈 - HEIZE",
+        "기리보이 - GIRIBOY",
+      ],
     },
     {
       id: 1,
       date: "2023.05.18 THU",
-      detail: [" ", "COMING SOON", " "],
+      detail: ["마크툽 - MAKTUB", "빅나티 - BIG Naughty", "싸이 - PSY"],
     },
     {
       id: 2,
       date: "2023.05.19 FRI",
-      detail: [" ", "COMING SOON", " "],
+      detail: ["현아 - Hyun A", "크러쉬 - Crush"],
     },
   ];
 
@@ -94,6 +98,15 @@ const Main = () => {
       {dateInfo.map((v) => (
         <TextBox key={v.id} title={v.date} detail={v.detail} />
       ))}
+      <TextBox
+        title="축제 이벤트"
+        detail={["비룡제 스탬프 투어", "인경호 보트하우스", "비룡제 포토부스"]}
+      />
+      <Margin height="16" />
+      <QuickLink
+        text="자세한 내용 확인하기"
+        moveTo={() => navigate("/festa-info")}
+      />
       <Margin height="122" />
 
       <Separator />
@@ -111,7 +124,7 @@ const Main = () => {
           moveTo={() => navigate("/festa-info")}
         />
         <QuickLink
-          text="부스 정보 확인하기"
+          text="부스, 푸드트럭 확인하기"
           moveTo={() => navigate("/booth-info")}
         />
       </QuickLinkWrapper>

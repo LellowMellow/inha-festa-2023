@@ -121,7 +121,7 @@ const MenuBar = ({ menuClicked, menuClickedChange }) => {
               moveTo={() => navigate("/festa-info")}
             />
             <MenuButton
-              text="축제 부스 정보"
+              text="부스, 푸드트럭 안내사항"
               moveTo={() => navigate("/booth-info")}
             />
             <MenuButton
