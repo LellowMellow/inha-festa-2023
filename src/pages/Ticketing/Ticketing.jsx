@@ -60,13 +60,81 @@ const Ticketing = () => {
       />
       <Margin height="16" />
       <QuickLink
-        text="부스, 푸드트럭 확인하기"
+        text="부스 정보 확인하기"
         moveTo={() => navigate("/booth-info")}
       />
       <Margin height="122" />
 
       <Separator />
-      <Typography header>온라인 티켓팅 안내</Typography>
+      <Typography header>예비군 현장 티켓팅 안내</Typography>
+      <Margin height="8" />
+      <TextBox
+        notmove
+        notitle
+        detail={[
+          "예비군 훈련으로 인해 사전 티켓팅에 참여하지 못한 분들을 대상으로 별도의 티켓팅이 진행됩니다.",
+          "사전 티켓팅 기간 (5.10 - 5.12) 내 예비군 대상이셨던 학생분들을 대상으로 합니다.",
+        ]}
+      />
+      <TextBox
+        notmove
+        title="예비군 티켓팅 자격 요건 안내"
+        detail={[
+          "5.10 - 5.12 사전 티켓팅 당일 학생 예비군 대상 학과 소속 예비군 대상 학생이어야 합니다.",
+          "학생 예비군으로 참여하지 못한 해당 날짜 (5.10 : DAY 1 / 5.11 : DAY 2 / 5.12 : DAY 3) 의 공연 티켓에 해당됩니다.",
+          "해당 예비군 훈련 참여를 증빙할 수 있는 ‘예비군 교육 훈련 필증’을 반드시 인쇄하여 지참하여야 참여하실 수 있습니다.",
+        ]}
+      />
+      <TextBox
+        notmove
+        title="예비군 티켓팅 일정 안내"
+        detail={[
+          "티켓팅 시작 시간 : 축제 당일 오전 10시",
+          "티켓 장소 : 농구장 옆 티켓 배부처",
+          "티켓팅 준비 서류 : 예비군 필증, 학생증 (예비군 필증은 인쇄하여 실물로 지참할 것)",
+        ]}
+      />
+      <TextBox
+        notmove
+        title="티켓팅 가능 인원"
+        detail={[
+          "[ DAY 1 티켓팅 ]",
+          "적용 대상 학과 : 화학공학과, 사회인프라공학과, 공간정보학과, 환경공학과",
+          "당일 티켓팅 가능인원 : 40명 (39.7969명)",
+          "",
+          "[ DAY 2 티켓팅 ]",
+          "적용 대상 학과 : 전자공학과, 정보통신공학과",
+          "당일 티켓팅 가능인원 : 40명 (39.8130명)",
+          "",
+          "[ DAY 3 티켓팅 ]",
+          "12일은 학생 예비군이 없었습니다.",
+        ]}
+      />
+      <Margin height="16" />
+      <QuickLink
+        text="예비군 교육 훈련 필증 확인하기"
+        moveTo={() =>
+          window.open("https://www.yebigun1.mil.kr/dmobis/index_main.do")
+        }
+      />
+      <Margin height="16" />
+      <QuickLink
+        text="총학생회 본부 위치 확인하기"
+        moveTo={() => window.open("https://goo.gl/maps/M8A2E93QL7qQQ2Qr5")}
+      />
+      <Margin height="16" />
+      <QuickLink
+        text="관련 공지 확인하기"
+        moveTo={() =>
+          window.open(
+            "https://www.instagram.com/p/CsUnONivPfj/?utm_source=ig_web_copy_link&igshid=MzRlODBiNWFlZA=="
+          )
+        }
+      />
+      <Margin height="122" />
+
+      <Separator />
+      <Typography header>온라인 티켓팅 안내 (종료)</Typography>
       <Margin height="8" />
       <TextBox
         notmove
@@ -96,36 +164,6 @@ const Ticketing = () => {
       <QuickLink
         text="온라인 티켓팅 신청하기"
         moveTo={() => window.open("https://www.inha.ac.kr/kr/4076/subview.do")}
-      />
-      <Margin height="122" />
-
-      <Separator />
-      <Typography header>예비군 현장 티켓팅 안내</Typography>
-      <Margin height="8" />
-      <TextBox
-        notmove
-        notitle
-        detail={[
-          "예비군 훈련으로 인해 사전 티켓팅에 참여하지 못한 분들을 대상으로 별도의 티켓팅이 진행됩니다.",
-          "사전 티켓팅 기간 (5.10 - 5.12) 내 예비군 대상이셨던 학생분들을 대상으로 합니다.",
-          "정확한 매수의 경우 추후 공지될 예정입니다.",
-        ]}
-      />
-      <TextBox
-        notmove
-        title="예비군 티켓팅 자격 요건 안내"
-        detail={[
-          "5.10 - 5.12 사전 티켓팅 당일 학생 예비군 대상 학과 소속 예비군 대상 학생이어야 합니다.",
-          "학생 예비군으로 참여하지 못한 해당 날짜 (5.10 : DAY 1 / 5.11 : DAY 2 / 5.12 : DAY 3) 의 공연 티켓에 해당됩니다.",
-          "해당 예비군 훈련 참여를 증빙할 수 있는 ‘예비군 교육 훈련 필증’을 반드시 인쇄하여 지참하여야 참여하실 수 있습니다.",
-        ]}
-      />
-      <Margin height="16" />
-      <QuickLink
-        text="예비군 교육 훈련 필증 확인하기"
-        moveTo={() =>
-          window.open("https://www.yebigun1.mil.kr/dmobis/index_main.do")
-        }
       />
       <Margin height="122" />
 

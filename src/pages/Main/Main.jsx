@@ -111,7 +111,7 @@ const Main = () => {
           moveTo={() => navigate("/festa-info")}
         />
         <QuickLink
-          text="부스, 푸드트럭 확인하기"
+          text="부스 정보 확인하기"
           moveTo={() => navigate("/booth-info")}
         />
       </QuickLinkWrapper>
